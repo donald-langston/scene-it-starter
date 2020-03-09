@@ -14,13 +14,13 @@ body {
 	margin-top: 20px;
 }
 
-.movies-container{
+ .movies-container{
 	display: flex;
 	flex-direction: row;
-	justify-content: space-between;
+	justify-content: space-evenly;
 	flex-wrap: wrap;
 }
-
+ 
 
 .movie {
 	margin-bottom: 15px;
