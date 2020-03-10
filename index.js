@@ -18,9 +18,13 @@ document.addEventListener('DOMContentLoaded', function() {
     
     document.getElementById('search-form').addEventListener('submit', function(e) {
         e.preventDefault();
-        document.getElementsByClassName("movies-container")[0].innerHTML = renderMovies(movieData);
+        var searchString = document.querySelector("input").value;
+        var urlEncodedSearchString = encodeURIComponent(searchString);
+
+        axios.get("http://www.omdbapi.com/?apikey=d5b538&s=" + urlEncodedSearchString).then(function(response) {
+            document.getElementsByClassName("movies-container")[0].innerHTML = renderMovies(response.data.Search);
+        });
     });
- 
 });
 
 
